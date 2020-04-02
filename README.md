@@ -13,10 +13,10 @@ go: downloading github.com/coderdba-coding-org/gojunk v0.0.0-20200402072544-6b5e
 go: extracting github.com/coderdba-coding-org/gojunk v0.0.0-20200402072544-6b5e6658f6f0
 
 \$ ls -l
--rw-r--r--  1 username  DHC\Domain Users  653 Apr  2 12:56 README.md
-drwxr-xr-x  7 username  DHC\Domain Users  224 Apr  2 12:56 bak
--rw-------  1 username  DHC\Domain Users  152 Apr  2 12:56 go.mod
--rw-------  1 username  DHC\Domain Users  249 Apr  2 12:56 go.sum
+-rw-r--r--  1 username  somedomain Users  653 Apr  2 12:56 README.md
+drwxr-xr-x  7 username  somedomain Users  224 Apr  2 12:56 bak
+-rw-------  1 username  somedomain Users  152 Apr  2 12:56 go.mod
+-rw-------  1 username  somedomain Users  249 Apr  2 12:56 go.sum
 
 ### Find the downloaded module in $GOPATH which is as of now ~/go (the default)
 \$ cd ~/go
@@ -47,7 +47,9 @@ import (
 
 ### Tidy the module file
 NOTE: Note that the "//indirect" goes away as we are using the gojunk repo in main.go (or other program in this module)
+
 \$ go mod tidy
+
 \$ cat go.mod
 module github.com/coderdba-coding-org/gomodules1
 
@@ -55,4 +57,26 @@ go 1.12
 
 require github.com/coderdba-coding-org/gojunk v0.0.0-20200402072544-6b5e6658f6f0
 
+### Get the module into vendor folder within this module
+$ go mod vendor
 
+$ cd vendor
+$ ls -lR
+
+total 8
+drwxr-xr-x  3 username  somedomain Users   96 Apr  2 13:10 github.com
+-rw-r--r--  1 username  somedomain Users  113 Apr  2 13:10 modules.txt
+
+./github.com:
+total 0
+drwxr-xr-x  3 username  somedomain Users  96 Apr  2 13:10 coderdba-coding-org
+
+./github.com/coderdba-coding-org:
+total 0
+drwxr-xr-x  5 username  somedomain Users  160 Apr  2 13:10 gojunk
+
+./github.com/coderdba-coding-org/gojunk:
+total 24
+-rw-r--r--  1 username  somedomain Users   8 Apr  2 13:10 README.md
+-rw-r--r--  1 username  somedomain Users  43 Apr  2 13:10 git-push.sh
+-rw-r--r--  1 username  somedomain Users  91 Apr  2 13:10 junk1.go
