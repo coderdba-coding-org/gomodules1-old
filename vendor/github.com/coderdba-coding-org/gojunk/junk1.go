@@ -6,6 +6,6 @@ import (
 
 func PrintHello() {
 
-fmt.Printf("Hello from gojunk")
+fmt.Printf("\nHello from gojunk\n")
 
 }

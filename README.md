@@ -98,3 +98,27 @@ total 24
 ```
 Hello from gojunk
 ```
+
+### Get the latest version of the module - gojunk
+
+- Get
+\$ go get -u 
+NOTE: No need to give the specific module name - will update all  
+
+
+```
+go: finding github.com/coderdba-coding-org/gojunk latest
+go: downloading github.com/coderdba-coding-org/gojunk v0.0.0-20200402074708-955f14ff0fec
+go: extracting github.com/coderdba-coding-org/gojunk v0.0.0-20200402074708-955f14ff0fec
+```
+
+- Update vendor folder
+\$ go mod vendor
+
+- Test by running the main program
+NOTE: This gives an output with a line before and after the Hello line
+\$ go run .
+```
+
+Hello from gojunk
+```
