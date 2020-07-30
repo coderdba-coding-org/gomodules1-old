@@ -1,4 +1,4 @@
-module github.com/coderdba-coding-org/gomodules1
+module github.com/coderdba-coding-org/gomodules2
 
 go 1.12
 
